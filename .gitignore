@@ -5,3 +5,4 @@
 __pycache__/
 *.pyc
 tests/__pycache__/test_loginfunction.cpython-313-pytest-8.3.5.pyc
+report.html

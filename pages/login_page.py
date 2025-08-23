@@ -1,3 +1,5 @@
+import logging
+
 from playwright.sync_api import Page
 class LoginPage:
     def __init__(self,page:Page):
@@ -7,9 +9,11 @@ class LoginPage:
         self.login_button = page.locator("#login-button")
 
     def goto(self):
+        logging.info("Opening the URL")
         self.page.goto("https://www.saucedemo.com/v1/")
 
     def login(self,username,password):
+        logging.info("Entering credentials and clicking login")
         self.username_input.fill(username)
         self.password_input.fill(password)
         self.login_button.click()

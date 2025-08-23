@@ -2,6 +2,12 @@ import pytest
 
 from pages.login_page import LoginPage
 
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
 @pytest.fixture
 def page(playwright):
     browser = playwright.chromium.launch(headless=False)
