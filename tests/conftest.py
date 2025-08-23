@@ -8,9 +8,10 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s"
 )
+
 @pytest.fixture
-def page(playwright):
-    browser = playwright.chromium.launch(headless=False)
+def page(playwright, browser_name):
+    browser = getattr(playwright, browser_name).launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
     yield page
